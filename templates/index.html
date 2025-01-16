@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz project</title>
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+        }
+        body{
+            background: linear-gradient(rgb(201, 241, 176),rgb(193, 235, 245), rgb(242, 242, 190));
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: rgb(236, 249, 183);
+        }
+        h1{
+            text-align: center;
+            font-family:  sans-serif;
+            font-size: 40px;
+        }
+        .container{
+            font-family:'Times New Roman', Times, serif;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px;
+            color: rgb(103, 102, 102);
+        }
+        img{
+            position: absolute;
+            right: 420px;
+            top: 180px;
+            height: 400px;
+            width: 250px;
+        }
+        .start{
+            border: none;
+            background-color: rgb(117, 248, 132);
+            padding:20px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+        }
+        .start:hover{
+            transform: scale(1.1);
+        }
+        .inputname{
+            width: 200px;
+            height: auto;
+            padding: 50px;
+            display: block;
+            position:absolute;
+            top:40%;
+            left:40%;
+            background-color: transparent;
+            opacity: 12px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            text-align: center;
+        }
+        .inputname:hover{
+            box-shadow: 1px 2px 14px rgb(250, 250, 108);
+        }
+        .name{
+            border-radius: 15px;
+            border: 2px solid black;
+            padding: 10px;
+            margin-top: 9px;
+            background-color: transparent;
+        }
+        .about{
+            display: flex;
+            gap: 2.5em;
+            position: absolute;
+            right: 15px;
+            top: 8px;
+        }
+        .about .a{
+            text-decoration: none;
+            color: black;
+        }
+        .about .a:hover{
+            color: red;
+        }
+        .information{
+            display: block;
+            position: absolute;
+            top: 800px;
+            left:350px;
+
+        }
+        .aboutus #aboutus1{
+            font-size: 40px;
+            color: black;
+        }
+        .aboutus{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            text-align: center;
+            padding:40px;
+            color: rgb(103, 103, 103);
+            width: 700px;
+            height: auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 8em;
+            /* background: linear-gradient(rgb(242, 242, 178) ,white, rgb(252, 252, 241)); */
+            background-color: white;
+            border-top: 3px solid black;
+        }
+        .aboutus:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+    <body>
+        <div class="about">
+             <a class ="a" href="#i2">  <!--nextpage is name (urlpatterns ko)   -->
+                About us</a>  
+            <a class ="a" href="#i3">
+                Contact</a>   
+            <a class ="a" href="#i1">
+                Home</a>  
+        </div>
+        <h1> Quiz Craze</h1>
+        <div class="container">
+            <p> Quiz craze brings you with exciting quiz questions<br>
+                covering various subjects including science<br>
+                general knowledge, maths, literature, IQs ans many more
+            </p>
+        </div>
+        <img src="static\img1.png" >
+            <div class="inputname">
+                <form action = '' method = 'POST' >         
+                    {% csrf_token %}
+                    <label>Enter your name to get started</label>
+                    <input class="name" type = " text" placeholder="enter your name" name= "name" >
+                    <button type = "submit" class="start">Get Started</button>
+                </form>
+            </div>
+            <div class="information" >
+                <div class ="aboutus" id="i1">
+                    <p id = "aboutus1"> Home <br></p>
+                    <p>Welcome to Quiz Craze, the ultimate destination for trivia lovers! Whether you’re a casual player or a quiz master, our game offers endless fun and challenges across a wide range of topics. From pop culture and history to science and sports, we’ve got questions to test your knowledge and keep you entertained.
+                        At Quiz Craze, we believe learning should be fun. That’s why we’ve designed an interactive experience where you can challenge your friends, unlock achievements, and climb the leaderboard. With new quizzes added regularly, there’s always something fresh to explore!
+                        So, what are you waiting for? Dive into the world of trivia, sharpen your mind, and see how you rank against players worldwide.
+                        Let the quiz begin!</p>
+                </div>
+                <div class ="aboutus" id="i2">
+                    <p id = "aboutus1"> About Us <br></p>
+                    <p>Welcome to Quiz Craze, the ultimate destination for trivia lovers! Whether you’re a casual player or a quiz master, our game offers endless fun and challenges across a wide range of topics. From pop culture and history to science and sports, we’ve got questions to test your knowledge and keep you entertained.
+                        At Quiz Craze, we believe learning should be fun. That’s why we’ve designed an interactive experience where you can challenge your friends, unlock achievements, and climb the leaderboard. With new quizzes added regularly, there’s always something fresh to explore!
+                        So, what are you waiting for? Dive into the world of trivia, sharpen your mind, and see how you rank against players worldwide.
+                        Let the quiz begin!</p>
+                </div>
+                <div class ="aboutus" id="i3">
+                    <p id = "aboutus1"> Contact <br></p>
+                    <p>We’d love to hear from you! Whether you have questions, feedback, or need assistance with the game, our team is here to help. Your experience is important to us, and we’re always looking for ways to improve.
+                        Feel free to reach out to us at [support email], and we’ll get back to you as soon as possible. You can also follow us on social media for the latest updates, new quizzes, and exclusive content.                    
+                        Thank you for playing Quiz Craze—happy quizzing!</p>
+                </div>
+            </div>
+    </body>
+</html>
